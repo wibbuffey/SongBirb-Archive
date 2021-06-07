@@ -1,0 +1,21 @@
+{
+  "name": "songbirb-rewritten",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.5.0",
+    "discord": "^0.8.2",
+    "discord.js": "^12.5.3",
+    "http": "^0.0.1-security",
+    "ytdl": "^1.4.1",
+    "ytdl-core": "^4.8.2",
+    "ytdl-getinfo": "^1.1.0"
+  }
+}
