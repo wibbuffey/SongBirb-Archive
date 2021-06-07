@@ -1,0 +1,14 @@
+{
+  "logins": {
+    "oauth": "847907232183746662"
+    "token": "YOUR TOKEN HERE"
+  },
+  "prefix": {
+    "default": "b!",
+    "custom": {}
+  },
+  "volume": {
+    "default": 1,
+    "custom": {}
+  }
+};
