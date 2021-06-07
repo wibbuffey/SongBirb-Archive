@@ -10,5 +10,9 @@
   "volume": {
     "default": 1,
     "custom": {}
+  },
+  "tracks": {
+    "default": "pokemon",
+    "custom": {}
   }
 };
