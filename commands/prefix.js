@@ -9,7 +9,7 @@ module.exports = (message, prefix) => {
     message.channel.send("Too many parameters!");
   } else {
     let newPrefix = args[1];
-    config.prefix.custom[message.guild.id] = newPrefix;
+    config.prefix.custom[message.guild.id.toString()] = newPrefix;
     fs.writeFile("config.json", JSON.stringify(config, null, 2), () => {
       if (err) {
         message.channel.send("An error occurred.");
