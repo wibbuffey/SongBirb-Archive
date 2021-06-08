@@ -17,48 +17,49 @@ const check = (prefix) => {
 };
 
 const getVolume = (message) => {
-  volume = config.volume.custom[message.guild.id.toString()]
+  customVolume = config.volume.custom[message.guild.id.toString()];
   if (customVolume) {
     return customVolume;
   } else {
     return config.volume.default;
   }
-}
+};
 
 const getTracklist = (message) => {
-  tracklist = config.tracks.custom[message.guild.id.toString()]
+  customTracklist = config.tracks.custom[message.guild.id.toString()];
   if (customTracklist) {
     return customTracklist;
   } else {
     return config.tracks.default;
   }
-}
+};
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}.`);
+  console.log(`Default prefix: ${config.prefix.default}`)
 });
 
 try {
   client.on("message", (message) => {
-    const prefix = check(config.prefix.custom[message.guild.id]);
+    const currentPrefix = check(config.prefix.custom[message.guild.id]);
     const currentVolume = getVolume(message);
     const currentTracklist = getTracklist(message);
-    
-    if (message.content.startsWith(prefix + "ping")) {
+
+    if (message.content.startsWith(currentPrefix + "ping")) {
       ping(message);
-    } else if (message.content.startsWith(prefix + "summon")) {
+    } else if (message.content.startsWith(currentPrefix + "summon")) {
       summon(message, client, currentVolume, currentTracklist);
-    } else if (message.content.startsWith(prefix + "leave")) {
+    } else if (message.content.startsWith(currentPrefix + "leave")) {
       leave(message);
-    } else if (message.content.startsWith(prefix + "help")) {
-      help(message, prefix);
-    } else if (message.content.startsWith(prefix + "prefix")) {
-      prefix(message, prefix);
-    } else if (message.content.startsWith(prefix + "volume")) {
+    } else if (message.content.startsWith(currentPrefix + "help")) {
+      help(message, currentPrefix);
+    } else if (message.content.startsWith(currentPrefix + "prefix")) {
+      prefix(message, currentPrefix);
+    } else if (message.content.startsWith(currentPrefix + "volume")) {
       volume(message, currentVolume);
-    } else if (message.content.startsWith(prefix + "tracklist")) {
+    } else if (message.content.startsWith(currentPrefix + "tracklist")) {
       tracklist(message, currentTracklist);
-    } else if (message.content.startsWith(prefix)) {
+    } else if (message.content.startsWith(currentPrefix)) {
       message.channel.send("Command not found. :(");
     }
   });
