@@ -9,11 +9,20 @@ const help = require("./commands/help");
 
 const check = (prefix) => {
   if (!prefix) {
-    return config.default;
+    return config.prefix.default;
   } else {
     return prefix;
   }
 };
+
+const getVolume = (message) => {
+  volume = config.volume.custom[message.guild.id
+  if (customVolume) {
+    return customVolume;
+  } else {
+    return config.volume.default;
+  }
+}
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}.`);
@@ -21,11 +30,12 @@ client.on("ready", () => {
 
 try {
   client.on("message", (message) => {
-    const prefix = check(config.prefix[message.guild.id]);
+    const prefix = check(config.prefix.custom[message.guild.id]);
     if (message.content.startsWith(prefix + "ping")) {
       ping(message);
     } else if (message.content.startsWith(prefix + "summon")) {
-      summon(message, client);
+      volume = getVolume(message);
+      summon(message, client, volume);
     } else if (message.content.startsWith(prefix + "leave")) {
       leave(message);
     } else if (message.content.startsWith(prefix + "help")) {
@@ -40,4 +50,5 @@ try {
 } catch {
   console.log("Not enough permissions!");
 }
-client.login(config.token);
+
+client.login(config.logins.token);
