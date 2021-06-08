@@ -12,7 +12,7 @@ module.exports = (message, volume) => {
       message.channel.send("The volume must be a number in (0,1].")
     } else {
       let newVolume = args[1];
-      config.volume.custom[message.guild.id] = newVolume;
+      config.volume.custom[message.guild.id.toString()] = newVolume;
       fs.writeFile("config.json", JSON.stringify(config, null, 2), () => {
         if (err) {
           message.channel.send("An error occurred.");
