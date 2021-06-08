@@ -26,7 +26,7 @@ function play(connection, message, client, volume, tracklist) {
   });
 }
 
-module.exports = (message, client, volume) => {
+module.exports = (message, client, volume, tracklist) => {
   let channel = message.member.voice.channel;
   if (!channel) {
     message.channel.send("You must be in a voice channel to summon me.");
@@ -38,7 +38,7 @@ module.exports = (message, client, volume) => {
       message.channel.send("I need to be able to speak in the VC!");
     } else {
       channel.join().then((connection) => {
-        play(connection, message, client, volume);
+        play(connection, message, client, volume, tracklist);
       });
     }
   }
