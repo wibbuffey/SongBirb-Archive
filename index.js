@@ -5,7 +5,7 @@ const config = require("./config");
 const ping = require("./commands/ping");
 const summon = require("./commands/summon");
 const leave = require("./commands/leave");
-const prefix = require("./commands/help");
+const prefix = require("./commands/prefix");
 const help = require("./commands/help");
 
 const check = (prefix) => {
@@ -17,7 +17,7 @@ const check = (prefix) => {
 };
 
 const getVolume = (message) => {
-  volume = config.volume.custom[message.guild.id
+  volume = config.volume.custom[message.guild.id.toString()]
   if (customVolume) {
     return customVolume;
   } else {
@@ -32,17 +32,20 @@ client.on("ready", () => {
 try {
   client.on("message", (message) => {
     const prefix = check(config.prefix.custom[message.guild.id]);
+    const currentVolume = getVolume(message);
     if (message.content.startsWith(prefix + "ping")) {
       ping(message);
     } else if (message.content.startsWith(prefix + "summon")) {
       volume = getVolume(message);
-      summon(message, client, volume);
+      summon(message, client, currentVolume);
     } else if (message.content.startsWith(prefix + "leave")) {
       leave(message);
     } else if (message.content.startsWith(prefix + "help")) {
       help(message, prefix);
     } else if (message.content.startsWith(prefix + "prefix")) {
       prefix(message, prefix);
+    } else if (message.content.startsWith(prefix + "volume")) {
+      volume(message, currentVolume);
     } else if (message.content.startsWith(prefix)) {
       message.channel.send("Command not found. :(");
     }
