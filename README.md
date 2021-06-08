@@ -6,7 +6,7 @@ SongBirb was a Discord music bot originally created to play Pokémon music. As t
 
 ## Running
 
-First, change the token in [`config.js`](config.js) to your bot token. Then, run `npm install` to get the dependencies. Finally, run [`index.js`](index.js) and you'll be all good to go!
+First, change the token (`logins.token`) in [`config.js`](config.js) to your bot token. Then, run `npm install` to get the dependencies. Finally, run [`index.js`](index.js) and you'll be all good to go!
 
 ## Contributing
 
