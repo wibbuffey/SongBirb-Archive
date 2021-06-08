@@ -5,6 +5,7 @@ const config = require("./config");
 const ping = require("./commands/ping");
 const summon = require("./commands/summon");
 const leave = require("./commands/leave");
+const prefix = require("./commands/help");
 const help = require("./commands/help");
 
 const check = (prefix) => {
@@ -41,8 +42,7 @@ try {
     } else if (message.content.startsWith(prefix + "help")) {
       help(message, prefix);
     } else if (message.content.startsWith(prefix + "prefix")) {
-      message.channel.send("Prefix is currently not working. :(");
-      // prefix(message, prefix);
+      prefix(message, prefix);
     } else if (message.content.startsWith(prefix)) {
       message.channel.send("Command not found. :(");
     }
