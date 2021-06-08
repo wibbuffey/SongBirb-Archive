@@ -2,8 +2,8 @@ const fs = require("fs");
 const ytdl = require("ytdl-core");
 const { getInfo } = require("ytdl-getinfo");
 
-function play(connection, message, client, volume) {
-  fs.readFile("./songs.txt", (err, content) => {
+function play(connection, message, client, volume, tracklist) {
+  fs.readFile("./tracks/" + tracklist + ".txt", (err, content) => {
     if (err) {
       console.error(err);
     } else {
