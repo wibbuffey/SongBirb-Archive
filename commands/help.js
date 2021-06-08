@@ -7,8 +7,8 @@ ${prefix}help      -- Display this message.
 ${prefix}leave     -- Leave the voice chat.
 ${prefix}summon    -- Summon SongBirb to your VC.
 ${prefix}ping      -- Check if the bot is up.
-${prefix}prefix    -- Change or check the prefix of the server.\
+${prefix}prefix    -- Change or check the prefix of the server.
 ${prefix}volume    -- Change the volume of the bot.
-#{prefix}tracklist -- Change the tracklist the bot uses.
+#{prefix}tracklist -- Change the tracklist the bot uses.\
   \`\`\``);
 };
