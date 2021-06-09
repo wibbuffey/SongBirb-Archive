@@ -14,7 +14,7 @@ module.exports = (message, prefix) => {
       if (err) {
         message.channel.send("An error occurred.");
       } else {
-        message.channel.send("Prefix changed.")
+        message.channel.send(`Prefix changed to ${prefix}.`)
       }
     })
   }
