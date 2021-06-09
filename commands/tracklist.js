@@ -17,7 +17,7 @@ module.exports = (message, tracklist) => {
         if (err) {
           message.channel.send("An error occurred.");
         } else {
-          message.channel.send("Tracklist changed.")
+          message.channel.send(`Tracklist changed to ${args[1]}.`)
         }
       })
     }
