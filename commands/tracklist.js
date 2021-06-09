@@ -13,7 +13,7 @@ module.exports = (message, tracklist) => {
     } else {
       let newTracklist = args[1];
       config.tracks.custom[message.guild.id.toString()] = newTracklist;
-      fs.writeFile("config.json", JSON.stringify(config, null, 2), () => {
+      fs.writeFile("config.json", JSON.stringify(config, null, 2), (err) => {
         if (err) {
           message.channel.send("An error occurred.");
         } else {
