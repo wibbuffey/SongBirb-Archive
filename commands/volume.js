@@ -17,7 +17,7 @@ module.exports = (message, volume) => {
         if (err) {
           message.channel.send("An error occurred.");
         } else {
-          message.channel.send("Volume changed.")
+          message.channel.send(`Volume changed to ${args[1]}.`)
         }
       })
     }
