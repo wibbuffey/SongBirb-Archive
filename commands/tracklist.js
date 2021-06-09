@@ -8,7 +8,7 @@ module.exports = (message, tracklist) => {
   } else if (args.length > 2) {
     message.channel.send("Too many parameters!");
   } else {
-    if (!fs.existsSync("./tracks/" + tracklist + ".txt")) {
+    if (!fs.existsSync("./tracks/" + args[1] + ".txt")) {
       message.channel.send("The tracklist must exist. Supported lists: pokemon.")
     } else {
       let newTracklist = args[1];
