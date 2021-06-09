@@ -19,7 +19,7 @@ function play(connection, message, client, volume, tracklist) {
           message.channel.send(`Now playing: ${info.items[0].title} (${song})`);
         });
         dispatcher.on("finish", () => {
-          play(connection, message, client);
+          play(connection, message, client, volume, tracklist);
         });
       }
     }
