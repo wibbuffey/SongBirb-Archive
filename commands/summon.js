@@ -11,12 +11,13 @@ function play(connection, message, client, volume, tracklist) {
       let index = Math.floor(Math.random() * songs.length);
       let song = songs[index];
       if (song.startsWith("#")) {
-        play(connection, message, client);
+        play(connection, message, client, volume, tracklist);
       } else {
-        let stream = ytdl(song, { filter: "audioonly" });
+        global.song = song;
+        let stream = ytdl(global.song, { filter: "audioonly" });
         let dispatcher = connection.play(stream, { seek: 0, volume: volume });
-        getInfo(song).then((info) => {
-          message.channel.send(`Now playing: ${info.items[0].title} (${song})`);
+        getInfo(global.song).then((info) => {
+          message.channel.send(`Now playing: ${info.items[0].title} (${global.song})`);
         });
         dispatcher.on("finish", () => {
           play(connection, message, client, volume, tracklist);
