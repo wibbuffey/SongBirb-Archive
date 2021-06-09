@@ -39,6 +39,7 @@ module.exports = (message, client, volume, tracklist) => {
     } else {
       channel.join().then((connection) => {
         play(connection, message, client, volume, tracklist);
+        message.channel.send("I've joined your VC.");
       });
     }
   }
