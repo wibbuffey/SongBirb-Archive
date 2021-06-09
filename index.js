@@ -7,6 +7,7 @@ const summon = require("./commands/summon");
 const leave = require("./commands/leave");
 const prefix = require("./commands/prefix");
 const help = require("./commands/help");
+const tracklist = require("./commands/tracklist")
 
 const check = (prefix) => {
   if (!prefix) {
