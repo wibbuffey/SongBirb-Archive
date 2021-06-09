@@ -13,7 +13,7 @@ module.exports = (message, volume) => {
     } else {
       let newVolume = args[1];
       config.volume.custom[message.guild.id.toString()] = newVolume;
-      fs.writeFile("config.json", JSON.stringify(config, null, 2), () => {
+      fs.writeFile("config.json", JSON.stringify(config, null, 2), (err) => {
         if (err) {
           message.channel.send("An error occurred.");
         } else {
