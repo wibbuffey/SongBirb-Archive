@@ -10,7 +10,7 @@ module.exports = (message, prefix) => {
   } else {
     let newPrefix = args[1];
     config.prefix.custom[message.guild.id.toString()] = newPrefix;
-    fs.writeFile("config.json", JSON.stringify(config, null, 2), () => {
+    fs.writeFile("config.json", JSON.stringify(config, null, 2), (err) => {
       if (err) {
         message.channel.send("An error occurred.");
       } else {
