@@ -40,7 +40,7 @@ function play(connection, message, client, volume, tracklist) {
             new_message.guild.id == message.guild.id &&
             new_message.content == prefix + "fav"
           ) {
-            fav(message, song);
+            fav(new_message, song);
           }
         });
       }
