@@ -9,7 +9,6 @@ const prefix = require("./commands/prefix");
 const help = require("./commands/help");
 const tracklist = require("./commands/tracklist");
 const volume = require("./commands/volume");
-const fav = require("./commands/fav");
 
 const check = (prefix) => {
   if (!prefix) {
@@ -62,8 +61,6 @@ try {
       volume(message, currentVolume);
     } else if (message.content.startsWith(currentPrefix + "tracklist")) {
       tracklist(message, currentTracklist);
-    } else if (message.content.startsWith(currentPrefix + "fav")) {
-      fav(message);
     } else if (message.content.startsWith(currentPrefix)) {
       message.channel.send("Command not found. :(");
     }
