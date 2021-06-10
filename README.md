@@ -11,3 +11,8 @@ First, change the token (`logins.token`) in [`config.js`](config.js) to your bot
 ## Contributing
 
 To contribute, file an issue or PR. All contributions are _more_ than welcome!
+
+## Contributors
+
+Thank you to all of these wonderful people who have decided to add to the project ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
