@@ -1,5 +1,6 @@
 const fs = require("fs");
 const ytdl = require("ytdl-core");
+const config = require("../config");
 const { getInfo } = require("ytdl-getinfo");
 
 function play(connection, message, client, volume, tracklist) {
@@ -17,7 +18,16 @@ function play(connection, message, client, volume, tracklist) {
         let stream = ytdl(global.song, { filter: "audioonly" });
         let dispatcher = connection.play(stream, { seek: 0, volume: volume });
         getInfo(global.song).then((info) => {
-          message.channel.send(`Now playing: ${info.items[0].title} (${global.song})`);
+          message.channel.send(
+            `Now playing: ${info.items[0].title} (${global.song})`
+          );
+          if (config.usrfav[global.song]) {
+            var msg = "";
+            config.usrfav[global.song].map((value) => {
+              msg += `<@!${value}>`;
+            });
+            message.channel.send(msg);
+          }
         });
         dispatcher.on("finish", () => {
           play(connection, message, client, volume, tracklist);
