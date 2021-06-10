@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "MaskedPikachu",
+      "name": "MaskedPikachu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/84983046?v=4",
+      "profile": "https://github.com/MaskedPikachu",
+      "contributions": [
+        "bug",
+        "data",
+        "ideas",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "SongBirb",
+  "projectOwner": "ShinyWobbuffet",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
