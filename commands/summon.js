@@ -26,7 +26,9 @@ function play(connection, message, client, volume, tracklist) {
             config.usrfav[global.song].map((value) => {
               msg += `<@!${value}>`;
             });
-            message.channel.send(msg);
+            if (msg) {
+              message.channel.send(msg);
+            }
           }
         });
         dispatcher.on("finish", () => {
