@@ -8,7 +8,7 @@ module.exports = (message, volume) => {
   } else if (args.length > 2) {
     message.channel.send("Too many parameters!");
   } else {
-    if (volume > 1 || volume <= 0) {
+    if (args[1] > 1 || args[1] <= 0) {
       message.channel.send("The volume must be a number in (0,1].")
     } else {
       let newVolume = args[1];
