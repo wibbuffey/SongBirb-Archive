@@ -2,7 +2,7 @@ const fs = require("fs");
 const ytdl = require("ytdl-core");
 const config = require("../config");
 const { getInfo } = require("ytdl-getinfo");
-const fav = require("./fav")
+const fav = require("./fav");
 
 function play(connection, message, client, volume, tracklist) {
   fs.readFile("./tracks/" + tracklist + ".txt", (err, content) => {
@@ -18,9 +18,7 @@ function play(connection, message, client, volume, tracklist) {
         let stream = ytdl(song, { filter: "audioonly" });
         let dispatcher = connection.play(stream, { seek: 0, volume: volume });
         getInfo(song).then((info) => {
-          message.channel.send(
-            `Now playing: ${info.items[0].title} (${song})`
-          );
+          message.channel.send(`Now playing: ${info.items[0].title} (${song})`);
           if (config.usrfav[song]) {
             var msg = "";
             config.usrfav[song].map((value) => {
@@ -35,11 +33,16 @@ function play(connection, message, client, volume, tracklist) {
           play(connection, message, client, volume, tracklist);
         });
         client.on("message", (new_message) => {
-          const prefix = config.prefix.custom[new_message.guild.id] ? config.prefix.custom[new_message.guild.id] : config.prefix.default
-          if (new_message.guild.id == message.guild.id && message.content == prefix + "fav") {
+          const prefix = config.prefix.custom[new_message.guild.id]
+            ? config.prefix.custom[new_message.guild.id]
+            : config.prefix.default;
+          if (
+            new_message.guild.id == message.guild.id &&
+            message.content == prefix + "fav"
+          ) {
             fav(message, song);
           }
-        }
+        });
       }
     }
   });
