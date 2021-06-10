@@ -38,7 +38,7 @@ function play(connection, message, client, volume, tracklist) {
             : config.prefix.default;
           if (
             new_message.guild.id == message.guild.id &&
-            message.content == prefix + "fav"
+            new_message.content == prefix + "fav"
           ) {
             fav(message, song);
           }
