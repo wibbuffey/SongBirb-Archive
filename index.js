@@ -8,7 +8,8 @@ const leave = require("./commands/leave");
 const prefix = require("./commands/prefix");
 const help = require("./commands/help");
 const tracklist = require("./commands/tracklist");
-const volume = require("./commands/volume")
+const volume = require("./commands/volume");
+const fav = require("./commands/fav");
 
 const check = (prefix) => {
   if (!prefix) {
@@ -38,7 +39,7 @@ const getTracklist = (message) => {
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}.`);
-  console.log(`Default prefix: ${config.prefix.default}`)
+  console.log(`Default prefix: ${config.prefix.default}`);
 });
 
 try {
@@ -61,6 +62,8 @@ try {
       volume(message, currentVolume);
     } else if (message.content.startsWith(currentPrefix + "tracklist")) {
       tracklist(message, currentTracklist);
+    } else if (message.content.startsWith(currentPrefix + "fav")) {
+      fav(message);
     } else if (message.content.startsWith(currentPrefix)) {
       message.channel.send("Command not found. :(");
     }
