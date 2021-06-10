@@ -1,6 +1,6 @@
 # SongBirb
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Intro
@@ -24,6 +24,7 @@ Thank you to all of these wonderful people who have decided to add to the projec
 <table>
   <tr>
     <td align="center"><a href="https://github.com/MaskedPikachu"><img src="https://avatars.githubusercontent.com/u/84983046?v=4?s=100" width="100px;" alt=""/><br /><sub><b>MaskedPikachu</b></sub></a><br /><a href="https://github.com/ShinyWobbuffet/SongBirb/issues?q=author%3AMaskedPikachu" title="Bug reports">🐛</a> <a href="#data-MaskedPikachu" title="Data">🔣</a> <a href="#ideas-MaskedPikachu" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-MaskedPikachu" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/SumireHana"><img src="https://avatars.githubusercontent.com/u/26971165?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sumire Hana</b></sub></a><br /><a href="#platform-SumireHana" title="Packaging/porting to new platform">📦</a> <a href="#tool-SumireHana" title="Tools">🔧</a> <a href="https://github.com/ShinyWobbuffet/SongBirb/commits?author=SumireHana" title="Tests">⚠️</a></td>
   </tr>
 </table>
 
