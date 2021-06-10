@@ -61,6 +61,8 @@ try {
       volume(message, currentVolume);
     } else if (message.content.startsWith(currentPrefix + "tracklist")) {
       tracklist(message, currentTracklist);
+    } else if (message.content.startsWith(currentPrefix + "fav")) {
+      // pass
     } else if (message.content.startsWith(currentPrefix)) {
       message.channel.send("Command not found. :(");
     }
