@@ -15,6 +15,14 @@ function play(connection, message, client, volume, tracklist) {
       if (song.startsWith("#")) {
         play(connection, message, client, volume, tracklist);
       } else {
+        config.csongs[message.guild.id.toString()] = song
+        fs.writeFile("config.json", JSON.stringify(config, null, 2), (err) => {
+          if (err) {
+            message.channel.send("An error occurred.");
+          } else {
+            message.channel.send(`Prefix changed to ${args[1]}.`)
+          }
+        })
         let stream = ytdl(song, { filter: "audioonly" });
         let dispatcher = connection.play(stream, { seek: 0, volume: volume });
         getInfo(song).then((info) => {
