@@ -19,8 +19,6 @@ function play(connection, message, client, volume, tracklist) {
         fs.writeFile("config.json", JSON.stringify(config, null, 2), (err) => {
           if (err) {
             message.channel.send("An error occurred.");
-          } else {
-            message.channel.send(`Prefix changed to ${args[1]}.`)
           }
         })
         let stream = ytdl(song, { filter: "audioonly" });
