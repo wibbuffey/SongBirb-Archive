@@ -72,4 +72,4 @@ try {
   console.log("Not enough permissions!");
 }
 
-client.login(process.env.BOT_TOKEN);
+client.login(config.logins.token);
