@@ -62,7 +62,7 @@ try {
     } else if (message.content.startsWith(currentPrefix + "tracklist")) {
       tracklist(message, currentTracklist);
     } else if (message.content.startsWith(currentPrefix + "fav")) {
-      // pass
+      fav(message)
     } else if (message.content.startsWith(currentPrefix)) {
       message.channel.send("Command not found. :(");
     }
@@ -71,4 +71,4 @@ try {
   console.log("Not enough permissions!");
 }
 
-client.login(config.logins.token);
+client.login(process.env.BOT_TOKEN);
