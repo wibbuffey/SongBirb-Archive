@@ -1,7 +1,7 @@
 {
   "logins": {
     "oauth": "847907232183746662",
-    "token": "YOUR TOKEN HERE"
+    "token": null
   },
   "prefix": {
     "default": "b!",
@@ -15,5 +15,6 @@
     "default": "pokemon",
     "custom": {}
   },
-  "usrfav": {}
+  "usrfav": {},
+  "csongs": {},
 }
