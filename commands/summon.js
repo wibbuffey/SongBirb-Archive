@@ -30,25 +30,14 @@ function play(connection, message, client, volume, tracklist) {
           }
         });
         dispatcher.on("finish", () => {
-          summon(message, client, volume, tracklist, connection);
-        });
-        client.on("message", (new_message) => {
-          const prefix = config.prefix.custom[new_message.guild.id]
-            ? config.prefix.custom[new_message.guild.id]
-            : config.prefix.default;
-          if (
-            new_message.guild.id == message.guild.id &&
-            new_message.content == prefix + "fav"
-          ) {
-            fav(new_message, song);
-          }
+          play(connection, message, client, volume, tracklist);
         });
       }
     }
   });
 }
 
-module.exports = (message, client, volume, tracklist, connection) => {
+module.exports = (message, client, volume, tracklist) => {
   let channel = message.member.voice.channel;
   if (!channel) {
     message.channel.send("You must be in a voice channel to summon me.");
@@ -58,8 +47,6 @@ module.exports = (message, client, volume, tracklist, connection) => {
       message.channel.send("I need to be able to connect to the VC!");
     } else if (!permissions.has("SPEAK")) {
       message.channel.send("I need to be able to speak in the VC!");
-    } else if (connection) {
-      play(connection, message, client, volume, tracklist);
     } else {
       channel.join().then((connection) => {
         play(connection, message, client, volume, tracklist);
