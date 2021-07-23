@@ -9,6 +9,7 @@ const prefix = require("./commands/prefix");
 const help = require("./commands/help");
 const tracklist = require("./commands/tracklist");
 const volume = require("./commands/volume");
+const fav = require("./commands/fav");
 
 const check = (prefix) => {
   if (!prefix) {
