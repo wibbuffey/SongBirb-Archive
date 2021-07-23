@@ -15,7 +15,8 @@ Array.prototype.remove = function () {
   return this;
 };
 
-module.exports = (message, song) => {
+module.exports = (message) => {
+  song = config.csongs[message.guild.id.toString()]
   if (config.usrfav[song]) {
     if (!config.usrfav[song].includes(message.author.id)) {
       config.usrfav[song].push(message.author.id);
