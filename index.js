@@ -14,6 +14,10 @@ try {
     const prefix = config.prefix.custom[message.guild.id] || config.prefix.default;
     const command = message.split(prefix.length - 1, message.length - 1)
     
+    global.prefix = prefix;
+    global.message = message;
+    global.config = config;
+    
     if (message.startsWith("prefix") && commands[command]) {
       commands[command]()
     } else {
