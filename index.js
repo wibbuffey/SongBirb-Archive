@@ -12,9 +12,13 @@ client.on("ready", () => {
 try {
   client.on("message", (message) => {
     const prefix = config.prefix.custom[message.guild.id] || config.prefix.default;
+    const volume = config.volume.custom[message.guild.id] || config.volume.default;
+    const tracklist = config.tracklist.custom[message.guild.id] || config.tracklist.default;
     const command = message.split(prefix.length - 1, message.length - 1)
     
     global.prefix = prefix;
+    global.volume = volume;
+    global.tracklist = tracklist;
     global.message = message;
     global.config = config;
     
