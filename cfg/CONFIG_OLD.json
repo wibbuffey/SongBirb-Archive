@@ -1,0 +1,20 @@
+{
+  "logins": {
+    "oauth": "847907232183746662",
+    "token": null
+  },
+  "prefix": {
+    "default": "b!",
+    "custom": {}
+  },
+  "volume": {
+    "default": 1,
+    "custom": {}
+  },
+  "tracks": {
+    "default": "pokemon",
+    "custom": {}
+  },
+  "usrfav": {},
+  "csongs": {}
+}
