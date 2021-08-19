@@ -1,25 +1,33 @@
-# SongBirb
+<h1 align="center">SongBirb</h1>
+<p align="center">
+  <a href="#intro">Intro</a> - <a href="#usage">Usage</a> - <a href="#running">Running</a> - <a href="#contributing">Contributing</a>
+</p>
+
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Intro
 
-SongBirb was a Discord music bot originally created to play Pokémon music. As the communities the betas were released in evolved, its features did too. Therefore, SongBirb has now become a fully open-source Discord bot!
+SongBirb is a Discord bot that works similarly to a shuffle playlist when provided with a list of music you would like to listen to. It was originally used to play video game music from a franchise of your choosing (and the default list of tracklists is still a variety of video game franchises), but other uses are possible with the custom tracklists.
 
-SongBirb allows you to play music from a text file containing a list of songs. By default it plays Pokémon, but it can be changed. Type b!help for more info.
+## Usage
+
+See [Running](#running) for how to start your own instance of the bot. To find a list of commands the bot can use, use the command `help` (by default, the prefix is `b!`). Alternatively, you can use the [doc/help.txt] file that the bot reads to get the help message itself.
 
 ## Running
 
-First, change the token (`logins.token`) in [`config.js`](config.js) to your bot token. Then, run `npm install` to get the dependencies. Finally, run [`index.js`](index.js) and you'll be all good to go!
+First, change the token (`login.token`) in [`cfg/login.json`](cfg/login.json) to your bot token. Then, run `npm install` to get the dependencies. Finally, run `npm start` and your console will tell you the bot's invite link, username, and default prefix.
 
 ## Contributing
 
-To contribute, file an issue or PR. All contributions are _more_ than welcome!
+To contribute, file an issue or PR. All contributions are welcomed!
 
-## Contributors
+For larger PRs, first create an issue.
 
-Thank you to all of these wonderful people who have decided to add to the project ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thank you to all of these wonderful people who have already decided to add to the project ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
