@@ -3,6 +3,10 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
+## An Update (January 31, 2021)
+
+I've decided to put this version of SongBirb in the past and move on to the new version of SongBirb. From now on, these releases should be considered **betas** and all of their majors should be deprecated. This is kept for historical purposes ONLY. [New repo here.](https://github.com/wibbuffey/SongBirb)
+
 ## Intro
 
 SongBirb was a Discord music bot originally created to play Pokémon music. As the communities the betas were released in evolved, its features did too. Therefore, SongBirb has now become a fully open-source Discord bot!
